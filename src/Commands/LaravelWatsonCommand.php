@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Alibori\LaravelWatson\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelWatsonCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-watson';
 
     public $description = 'My command';
 
