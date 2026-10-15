@@ -6,6 +6,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Enabled
+    |--------------------------------------------------------------------------
+    |
+    | Master switch for Watson. When disabled, exceptions are still handled
+    | by Laravel as usual, but Watson won't investigate them or send any
+    | notification. Useful to turn it off locally or in testing.
+    |
+    */
+
+    'enabled' => env('WATSON_ENABLED', true),
+
+    /*
+    |--------------------------------------------------------------------------
     | Notification Channel
     |--------------------------------------------------------------------------
     |
@@ -15,7 +28,7 @@ return [
     |
     */
 
-    'channel' => env('LARAVEL_WATSON_CHANNEL', 'mail'),
+    'channel' => env('WATSON_CHANNEL', 'mail'),
 
     /*
     |--------------------------------------------------------------------------
@@ -27,6 +40,6 @@ return [
     |
     */
 
-    'route' => env('LARAVEL_WATSON_ROUTE'),
+    'route' => env('WATSON_ROUTE', null),
 
 ];
