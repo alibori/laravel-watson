@@ -17,25 +17,54 @@ You can install the package via composer:
 composer require alibori/laravel-watson
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-watson-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-watson-config"
+php artisan vendor:publish --tag="watson-config"
 ```
 
-This is the contents of the published config file:
+## Usage
+
+### 1. Configure the AI provider
+
+Watson uses the [Laravel AI SDK](https://github.com/laravel/ai). Set up a provider and its API key as described in its docs (e.g. `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` in your `.env`).
+
+### 2. Configure Watson
+
+```dotenv
+WATSON_ENABLED=true
+WATSON_CHANNEL=mail
+WATSON_ROUTE=dev-team@example.com
+```
+
+- `WATSON_ENABLED`: master switch. Set to `false` locally or in tests.
+- `WATSON_CHANNEL`: notification channel used to deliver the analysis.
+- `WATSON_ROUTE`: destination for that channel (an email address for `mail`). Watson does nothing if it's empty.
+
+### 3. Hook it into your exception handler
+
+In `bootstrap/app.php`:
 
 ```php
-return [
-];
+use Alibori\LaravelWatson\LaravelWatson;
+use Illuminate\Foundation\Configuration\Exceptions;
+
+->withExceptions(function (Exceptions $exceptions) {
+    $exceptions->report(function (Throwable $e) {
+        LaravelWatson::handle($e);
+    });
+})
 ```
+
+### 4. Run a queue worker
+
+The analysis runs in a queued job, so your requests are never slowed down by the AI call:
+
+```bash
+php artisan queue:work
+```
+
+Each notification includes a summary, the likely cause, a suggested fix and a severity (`low`, `medium`, `high`, `critical`).
 
 ## Testing
 
