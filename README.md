@@ -3,8 +3,9 @@
 ## Package under development!
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/alibori/laravel-watson.svg?style=flat-square)](https://packagist.org/packages/alibori/laravel-watson)
-[![GitHub Tests Action Status](https://github.com/spatie/package-laravel-watson-laravel/actions/workflows/run-tests.yml/badge.svg)](https://github.com/alibori/laravel-watson/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://github.com/spatie/package-laravel-watson-laravel/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/alibori/laravel-watson/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Tests](https://github.com/alibori/laravel-watson/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/alibori/laravel-watson/actions/workflows/run-tests.yml)
+[![PHPStan](https://github.com/alibori/laravel-watson/actions/workflows/phpstan.yml/badge.svg?branch=main)](https://github.com/alibori/laravel-watson/actions/workflows/phpstan.yml)
+[![Code Style](https://github.com/alibori/laravel-watson/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/alibori/laravel-watson/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/alibori/laravel-watson.svg?style=flat-square)](https://packagist.org/packages/alibori/laravel-watson)
 
 Laravel Watson watches your application's exceptions, uses the Laravel AI SDK to diagnose the likely cause and fix, and notifies you only when it's actually worth knowing about.

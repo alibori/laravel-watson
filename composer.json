@@ -37,14 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Alibori\\LaravelWatson\\": "src/",
-            "Alibori\\LaravelWatson\\Database\\Factories\\": "database/factories/"
+            "Alibori\\LaravelWatson\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Alibori\\LaravelWatson\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "Alibori\\LaravelWatson\\Tests\\": "tests/"
         }
     },
     "scripts": {
