@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 use Alibori\LaravelWatson\DTO\WatsonResult;
 use Laravel\Ai\Responses\Data\Meta;
-use Laravel\Ai\Responses\Data\Usage;
+use Laravel\Ai\Responses\Data\TextUsage;
 use Laravel\Ai\Responses\StructuredAgentResponse;
 
 function structuredResponse(array $structured): StructuredAgentResponse
 {
-    return new StructuredAgentResponse('invocation-id', $structured, json_encode($structured), new Usage, new Meta);
+    return new StructuredAgentResponse('invocation-id', $structured, json_encode($structured), new TextUsage, new Meta);
 }
 
 test('watson result is built from the agent response', function () {
