@@ -19,7 +19,7 @@ final class ReadFile implements Tool
     {
         $path = realpath(base_path($request['path']));
 
-        if ($path === false || ! is_file($path) || ! str_starts_with($path, base_path().DIRECTORY_SEPARATOR)) {
+        if ($path === false || ! is_file($path) || ! str_starts_with($path, realpath(base_path()).DIRECTORY_SEPARATOR)) {
             return 'File not found.';
         }
 
