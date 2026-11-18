@@ -1,7 +1,5 @@
 # Laravel Watson
 
-## Package under development!
-
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/alibori/laravel-watson.svg?style=flat-square)](https://packagist.org/packages/alibori/laravel-watson)
 [![Tests](https://github.com/alibori/laravel-watson/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/alibori/laravel-watson/actions/workflows/run-tests.yml)
 [![PHPStan](https://github.com/alibori/laravel-watson/actions/workflows/phpstan.yml/badge.svg?branch=main)](https://github.com/alibori/laravel-watson/actions/workflows/phpstan.yml)
@@ -39,7 +37,7 @@ WATSON_ROUTE=dev-team@example.com
 ```
 
 - `WATSON_ENABLED`: master switch. Set to `false` locally or in tests.
-- `WATSON_CHANNEL`: notification channel used to deliver the analysis.
+- `WATSON_CHANNEL`: notification channel used to deliver the analysis. **For now only works with mail**.
 - `WATSON_ROUTE`: destination for that channel (an email address for `mail`). Watson does nothing if it's empty.
 
 ### 3. Hook it into your exception handler
